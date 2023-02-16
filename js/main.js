@@ -12,11 +12,13 @@ if (!localStorage.getItem("deck_id")) {
     .then((data) => {
       console.log(data);
       localStorage.setItem("deck_id", data.deck_id);
+      deck_id = localStorage.getItem("deck_id");
+      console.log(`Using new Deck ID: ${deck_id}`);
     })
     .catch((err) => {
       console.log(`error ${err}`);
     });
-} else {
+}else{
   deck_id = localStorage.getItem("deck_id");
   console.log(`Deck id used from previous sessions: ${deck_id}`);
 }
